@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOCHI-AR</title>
+
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body style="margin: 0px; overflow: hidden">
+
+    <a-scene embedded arjs>
+        <a-entity camera>
+            <a-cursor color="blue" scale="0.5 0.5 0.5"></a-cursor>
+        </a-entity>
+        <a-assets>
+            <img id="icon1" src="img/icon1.png">
+            <img id="icon2" src="img/icon2.png">
+            <img id="icon3" src="img/icon3.png">
+            <img id="icon4" src="img/icon4.png">
+            <img id="icon5" src="img/icon5.png">   
+            <img id="icon6" src="img/icon6.png">
+            <img id="icon7" src="img/icon7.png">
+            <img id="icon8" src="img/icon8.png">
+            <img id="icon9" src="img/icon9.png">
+            <img id="icon10" src="img/icon10.png">
+        </a-assets>
+
+        <a-marker preset="hiro">
+            <a-plane 
+            id="anime"
+            class="clickable"
+            rotation="-25 0 0"
+            material="src:#icon1; transparent:true;"
+            frame-animation>
+            </a-plane>
+        </a-marker>
+        <!-- <a-marker preset="kanji">
+            <a-image rotation="-25 0 0" src="img/target.png">
+            </a-image>
+        </a-marker>-->
+   
+    </a-scene>
+    
+    <div id="ui">
+        <div class="box" id="box"> </div>
+        <button id="left" class="left"><font size="5">◀︎</font></button>
+        <button id="up" class="left"><font size="5">▲</font></button>
+        <button id="right" class="left"><font size="5">▶︎</font></button>
+        <button id="down" class="left"><font size="5">▼</font></button>
+        <div id="txt">中央のカーソルを合わせて、 キャラを撫でてみましょう！<br>
+        ボタンを押すとキャラが動きます。一定時間放置すると元の位置に戻ります。
+    </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
